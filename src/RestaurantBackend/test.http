@@ -1,0 +1,24 @@
+### Door one: the REST API. You, the developer, already know these endpoints.
+
+### List every restaurant
+GET http://localhost:7071/api/restaurants
+
+### Filter by cuisine and city
+GET http://localhost:7071/api/restaurants?cuisine=Italian&city=Nijmegen
+
+### Get a menu
+GET http://localhost:7071/api/restaurants/r1/menu
+
+### Place an order
+POST http://localhost:7071/api/orders
+Content-Type: application/json
+
+{
+  "restaurantId": "r1",
+  "itemName": "Margherita",
+  "quantity": 2
+}
+
+### Door two lives at http://localhost:7071/runtime/webhooks/mcp
+### (streamable HTTP). Connect an MCP client to it instead of calling it
+### by hand; see .vscode/mcp.json and the README.

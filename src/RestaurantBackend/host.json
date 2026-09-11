@@ -1,0 +1,19 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      },
+      "enableLiveMetricsFilters": true
+    }
+  },
+  "extensions": {
+    "mcp": {
+      "serverName": "restaurant-directory",
+      "serverVersion": "1.0.0",
+      "instructions": "A restaurant directory and ordering backend. Use search_restaurants to find restaurants (filters are optional), get_menu to see items and prices for one restaurant, and place_order to order a menu item. Ids come from search_restaurants; item names come from get_menu."
+    }
+  }
+}
