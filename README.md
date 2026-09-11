@@ -118,4 +118,4 @@ This sample proves an architectural point, not a production posture:
 
 ## Blog post
 
-This repo accompanies the Cloud Perspectives post "MCP vs API is the wrong question" on [sjwiggers.com](https://sjwiggers.com).
+This repo accompanies the post [MCP vs API Is the Wrong Question](https://dev.to/steefjan_wiggers_34a415b/mcp-vs-api-is-the-wrong-question-392f), which walks through the sample, the demo, and the lessons learned deploying it.
