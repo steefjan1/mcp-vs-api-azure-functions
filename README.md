@@ -94,7 +94,7 @@ Then ask something like: *"Find me an Italian restaurant in Nijmegen, show me th
 azd up
 ```
 
-This provisions a Flex Consumption function app (default region `swedencentral`, override with `AZURE_LOCATION`), storage with identity-based access, and Application Insights, then deploys the app. The outputs include both doors:
+This provisions a Flex Consumption function app (azd prompts for the region; `swedencentral` works well), storage with identity-based access, and Application Insights, then deploys the app. The outputs include both doors:
 
 - `REST_API_BASE_URL`: the REST API base
 - `MCP_SERVER_URL`: the MCP endpoint
