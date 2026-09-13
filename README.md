@@ -116,6 +116,10 @@ This sample proves an architectural point, not a production posture:
 - Tool descriptions are load-bearing. The agent chooses tools based on the text in `McpToolTrigger` and `McpToolProperty`. Vague descriptions produce vague agents; treat them like API contracts.
 - MCP does not make an agent intelligent, and it does not do authorization for you. Everything you already needed for APIs (authentication, permissions, observability, governance) you still need here, and more urgently.
 
+## Going further: APIM in front of the doors
+
+The `infra/apim/` module adds Azure API Management in three patterns: in front of the REST door, as a governed passthrough for the MCP door (the client never holds the backend key), and as an MCP door generated from the REST operations. See [infra/apim/README.md](infra/apim/README.md).
+
 ## Blog post
 
 This repo accompanies the post [MCP vs API Is the Wrong Question](https://dev.to/steefjan_wiggers_34a415b/mcp-vs-api-is-the-wrong-question-392f), which walks through the sample, the demo, and the lessons learned deploying it.
