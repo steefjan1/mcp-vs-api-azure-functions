@@ -1,0 +1,79 @@
+{
+  "anchor_real_3_tools": 277,
+  "grid": [
+    {
+      "tools": 3,
+      "verbosity": "terse",
+      "tokens": 209,
+      "per_20_call_task": 4180
+    },
+    {
+      "tools": 3,
+      "verbosity": "realistic",
+      "tokens": 362,
+      "per_20_call_task": 7240
+    },
+    {
+      "tools": 3,
+      "verbosity": "verbose",
+      "tokens": 668,
+      "per_20_call_task": 13360
+    },
+    {
+      "tools": 10,
+      "verbosity": "terse",
+      "tokens": 596,
+      "per_20_call_task": 11920
+    },
+    {
+      "tools": 10,
+      "verbosity": "realistic",
+      "tokens": 1040,
+      "per_20_call_task": 20800
+    },
+    {
+      "tools": 10,
+      "verbosity": "verbose",
+      "tokens": 1972,
+      "per_20_call_task": 39440
+    },
+    {
+      "tools": 30,
+      "verbosity": "terse",
+      "tokens": 1856,
+      "per_20_call_task": 37120
+    },
+    {
+      "tools": 30,
+      "verbosity": "realistic",
+      "tokens": 3233,
+      "per_20_call_task": 64660
+    },
+    {
+      "tools": 30,
+      "verbosity": "verbose",
+      "tokens": 6089,
+      "per_20_call_task": 121780
+    },
+    {
+      "tools": 100,
+      "verbosity": "terse",
+      "tokens": 6370,
+      "per_20_call_task": 127400
+    },
+    {
+      "tools": 100,
+      "verbosity": "realistic",
+      "tokens": 11132,
+      "per_20_call_task": 222640
+    },
+    {
+      "tools": 100,
+      "verbosity": "verbose",
+      "tokens": 20814,
+      "per_20_call_task": 416280
+    }
+  ],
+  "curated_5_of_100_realistic": 542,
+  "curated_saving_pct": 95.1
+}
