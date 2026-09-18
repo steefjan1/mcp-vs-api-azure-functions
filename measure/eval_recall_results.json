@@ -1,0 +1,23 @@
+{
+  "shortlist_k": 5,
+  "tool_pool": 100,
+  "tasks": 200,
+  "recall": {
+    "terse": {
+      "vocabulary": 100.0,
+      "paraphrase": 5.0
+    },
+    "realistic": {
+      "vocabulary": 97.0,
+      "paraphrase": 5.0
+    },
+    "verbose": {
+      "vocabulary": 97.0,
+      "paraphrase": 4.0
+    },
+    "realistic+aliases": {
+      "vocabulary": 97.0,
+      "paraphrase": 100.0
+    }
+  }
+}
