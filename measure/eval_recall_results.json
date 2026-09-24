@@ -1,5 +1,10 @@
 {
   "shortlist_k": 5,
+  "k_sweep": [
+    3,
+    5,
+    10
+  ],
   "tool_pool": 100,
   "tasks": 200,
   "recall": {
@@ -19,5 +24,68 @@
       "vocabulary": 97.0,
       "paraphrase": 100.0
     }
+  },
+  "recall_by_k": {
+    "terse": {
+      "3": {
+        "vocabulary": 100.0,
+        "paraphrase": 3.0
+      },
+      "5": {
+        "vocabulary": 100.0,
+        "paraphrase": 5.0
+      },
+      "10": {
+        "vocabulary": 100.0,
+        "paraphrase": 10.0
+      }
+    },
+    "realistic": {
+      "3": {
+        "vocabulary": 95.0,
+        "paraphrase": 3.0
+      },
+      "5": {
+        "vocabulary": 97.0,
+        "paraphrase": 5.0
+      },
+      "10": {
+        "vocabulary": 100.0,
+        "paraphrase": 10.0
+      }
+    },
+    "verbose": {
+      "3": {
+        "vocabulary": 95.0,
+        "paraphrase": 2.0
+      },
+      "5": {
+        "vocabulary": 97.0,
+        "paraphrase": 4.0
+      },
+      "10": {
+        "vocabulary": 100.0,
+        "paraphrase": 8.0
+      }
+    },
+    "realistic+aliases": {
+      "3": {
+        "vocabulary": 95.0,
+        "paraphrase": 100.0
+      },
+      "5": {
+        "vocabulary": 97.0,
+        "paraphrase": 100.0
+      },
+      "10": {
+        "vocabulary": 100.0,
+        "paraphrase": 100.0
+      }
+    }
+  },
+  "shortlist_token_price_realistic": {
+    "3": 362,
+    "5": 542,
+    "10": 1040
   }
 }

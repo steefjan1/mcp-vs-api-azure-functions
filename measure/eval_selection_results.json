@@ -1,0 +1,2222 @@
+{
+  "model_deployment": "gpt-5.4-mini",
+  "shortlist_k": 5,
+  "tasks_per_condition": 60,
+  "seed": 42,
+  "conditions": {
+    "terse": {
+      "desc_hash": "d31fdf651a6b",
+      "vocabulary": {
+        "n": 30,
+        "selection_pct": 96.7,
+        "args_pct": 96.7
+      },
+      "paraphrase": {
+        "n": 30,
+        "selection_pct": 96.7,
+        "args_pct": 90.0
+      }
+    },
+    "realistic": {
+      "desc_hash": "c8181897cd77",
+      "vocabulary": {
+        "n": 30,
+        "selection_pct": 96.7,
+        "args_pct": 93.3
+      },
+      "paraphrase": {
+        "n": 30,
+        "selection_pct": 93.3,
+        "args_pct": 90.0
+      }
+    },
+    "verbose": {
+      "desc_hash": "9f9069c0b421",
+      "vocabulary": {
+        "n": 30,
+        "selection_pct": 90.0,
+        "args_pct": 90.0
+      },
+      "paraphrase": {
+        "n": 30,
+        "selection_pct": 93.3,
+        "args_pct": 90.0
+      }
+    },
+    "realistic+aliases": {
+      "desc_hash": "825265218fb5",
+      "vocabulary": {
+        "n": 30,
+        "selection_pct": 96.7,
+        "args_pct": 96.7
+      },
+      "paraphrase": {
+        "n": 30,
+        "selection_pct": 96.7,
+        "args_pct": 86.7
+      }
+    }
+  },
+  "rows": [
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "assign_order",
+      "chosen": "assign_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "get_ticket",
+      "chosen": "get_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "search_shipment",
+      "chosen": "search_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "export_ticket",
+      "chosen": "export_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "update_order",
+      "chosen": "update_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "create_payment",
+      "chosen": "create_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "get_policy",
+      "chosen": "list_policy",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "assign_claim",
+      "chosen": "assign_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "list_product",
+      "chosen": "list_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "archive_contract",
+      "chosen": "archive_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "search_ticket",
+      "chosen": "search_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "create_product",
+      "chosen": "create_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "list_ticket",
+      "chosen": "list_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "assign_ticket",
+      "chosen": "assign_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "archive_order",
+      "chosen": "archive_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "create_contract",
+      "chosen": "create_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "approve_shipment",
+      "chosen": "approve_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "export_shipment",
+      "chosen": "export_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "approve_policy",
+      "chosen": "approve_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "vocabulary",
+      "expected": "search_invoice",
+      "chosen": "search_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "create_invoice",
+      "chosen": "create_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "cancel_shipment",
+      "chosen": "cancel_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_product",
+      "chosen": "get_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "cancel_payment",
+      "chosen": "cancel_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_customer",
+      "chosen": "get_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "cancel_contract",
+      "chosen": "cancel_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "cancel_ticket",
+      "chosen": "cancel_ticket",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "update_shipment",
+      "chosen": "update_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "search_contract",
+      "chosen": "search_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "approve_payment",
+      "chosen": "approve_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "list_payment",
+      "chosen": "list_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_contract",
+      "chosen": "get_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "get_invoice",
+      "chosen": "search_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "archive_invoice",
+      "chosen": "archive_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "update_policy",
+      "chosen": "update_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "cancel_claim",
+      "chosen": "cancel_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "archive_shipment",
+      "chosen": "archive_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "create_ticket",
+      "chosen": "create_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "search_payment",
+      "chosen": "search_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "terse",
+      "desc_hash": "d31fdf651a6b",
+      "kind": "paraphrase",
+      "expected": "assign_customer",
+      "chosen": "assign_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "assign_order",
+      "chosen": "assign_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "get_ticket",
+      "chosen": "get_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "search_shipment",
+      "chosen": "search_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "export_ticket",
+      "chosen": "export_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "update_order",
+      "chosen": "update_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "create_payment",
+      "chosen": "create_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "get_policy",
+      "chosen": "get_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "assign_claim",
+      "chosen": "assign_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "list_product",
+      "chosen": "list_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "archive_contract",
+      "chosen": "archive_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "search_ticket",
+      "chosen": "search_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "export_policy",
+      "chosen": "search_policy",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "create_product",
+      "chosen": "create_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "list_ticket",
+      "chosen": "list_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "assign_ticket",
+      "chosen": "assign_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "archive_order",
+      "chosen": "archive_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "create_contract",
+      "chosen": "create_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "approve_shipment",
+      "chosen": "approve_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "export_shipment",
+      "chosen": "export_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "approve_policy",
+      "chosen": "approve_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "vocabulary",
+      "expected": "search_invoice",
+      "chosen": "search_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "create_invoice",
+      "chosen": "search_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "cancel_shipment",
+      "chosen": "cancel_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_product",
+      "chosen": "get_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "cancel_payment",
+      "chosen": "cancel_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_customer",
+      "chosen": "get_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "cancel_contract",
+      "chosen": "cancel_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "cancel_ticket",
+      "chosen": "cancel_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "update_shipment",
+      "chosen": "update_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "search_contract",
+      "chosen": "search_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "approve_payment",
+      "chosen": "approve_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "list_payment",
+      "chosen": "list_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_contract",
+      "chosen": "get_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "get_invoice",
+      "chosen": "search_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "archive_invoice",
+      "chosen": "archive_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "update_policy",
+      "chosen": "update_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "cancel_claim",
+      "chosen": "cancel_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "archive_shipment",
+      "chosen": "archive_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "create_ticket",
+      "chosen": "create_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "search_payment",
+      "chosen": "search_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic",
+      "desc_hash": "c8181897cd77",
+      "kind": "paraphrase",
+      "expected": "assign_customer",
+      "chosen": "assign_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "assign_order",
+      "chosen": "assign_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "get_ticket",
+      "chosen": "get_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "search_shipment",
+      "chosen": "search_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "export_ticket",
+      "chosen": "search_ticket",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "update_order",
+      "chosen": "update_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "create_payment",
+      "chosen": "create_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "get_policy",
+      "chosen": "get_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "assign_claim",
+      "chosen": "assign_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "list_product",
+      "chosen": "list_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "archive_contract",
+      "chosen": "archive_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "search_ticket",
+      "chosen": "search_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "create_product",
+      "chosen": "create_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "list_ticket",
+      "chosen": "list_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "assign_ticket",
+      "chosen": "assign_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "archive_order",
+      "chosen": "archive_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "create_contract",
+      "chosen": "create_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "assign_product",
+      "chosen": "search_product",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "approve_shipment",
+      "chosen": "approve_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "export_shipment",
+      "chosen": "export_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "approve_policy",
+      "chosen": "approve_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "export_contract",
+      "chosen": "get_contract",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "vocabulary",
+      "expected": "search_invoice",
+      "chosen": "search_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "create_invoice",
+      "chosen": "get_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "cancel_shipment",
+      "chosen": "cancel_shipment",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_product",
+      "chosen": "get_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "cancel_payment",
+      "chosen": "cancel_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_customer",
+      "chosen": "get_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "cancel_contract",
+      "chosen": "cancel_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "cancel_ticket",
+      "chosen": "cancel_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "update_shipment",
+      "chosen": "update_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "search_contract",
+      "chosen": "search_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "approve_payment",
+      "chosen": "approve_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "list_payment",
+      "chosen": "list_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_contract",
+      "chosen": "get_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "get_invoice",
+      "chosen": "list_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "archive_invoice",
+      "chosen": "archive_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "update_policy",
+      "chosen": "update_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "cancel_claim",
+      "chosen": "cancel_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "archive_shipment",
+      "chosen": "archive_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "create_ticket",
+      "chosen": "create_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "search_payment",
+      "chosen": "search_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "verbose",
+      "desc_hash": "9f9069c0b421",
+      "kind": "paraphrase",
+      "expected": "assign_customer",
+      "chosen": "assign_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "assign_order",
+      "chosen": "assign_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "get_ticket",
+      "chosen": "get_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "search_shipment",
+      "chosen": "search_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "export_ticket",
+      "chosen": "export_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "update_order",
+      "chosen": "update_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "create_payment",
+      "chosen": "create_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "get_policy",
+      "chosen": "get_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "assign_claim",
+      "chosen": "assign_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "list_product",
+      "chosen": "search_product",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "archive_contract",
+      "chosen": "archive_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "search_ticket",
+      "chosen": "search_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "create_product",
+      "chosen": "create_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "list_ticket",
+      "chosen": "list_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "assign_ticket",
+      "chosen": "assign_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "archive_order",
+      "chosen": "archive_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "create_contract",
+      "chosen": "create_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "approve_shipment",
+      "chosen": "approve_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "export_shipment",
+      "chosen": "export_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "approve_policy",
+      "chosen": "approve_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "vocabulary",
+      "expected": "search_invoice",
+      "chosen": "search_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "export_policy",
+      "chosen": "export_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "create_invoice",
+      "chosen": "get_invoice",
+      "selected": false,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "assign_product",
+      "chosen": "assign_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "approve_ticket",
+      "chosen": "approve_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "cancel_shipment",
+      "chosen": "cancel_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "update_contract",
+      "chosen": "update_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_product",
+      "chosen": "get_product",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "create_policy",
+      "chosen": "create_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "export_contract",
+      "chosen": "export_contract",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_shipment",
+      "chosen": "get_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_order",
+      "chosen": "get_order",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "cancel_payment",
+      "chosen": "cancel_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_customer",
+      "chosen": "get_customer",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "cancel_contract",
+      "chosen": "cancel_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "cancel_ticket",
+      "chosen": "cancel_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "archive_policy",
+      "chosen": "archive_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "update_shipment",
+      "chosen": "update_shipment",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "search_contract",
+      "chosen": "search_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "approve_payment",
+      "chosen": "approve_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "list_payment",
+      "chosen": "list_payment",
+      "selected": true,
+      "args_ok": false
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_contract",
+      "chosen": "get_contract",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "assign_payment",
+      "chosen": "assign_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "get_invoice",
+      "chosen": "get_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "archive_invoice",
+      "chosen": "archive_invoice",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "update_policy",
+      "chosen": "update_policy",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "cancel_claim",
+      "chosen": "cancel_claim",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "archive_shipment",
+      "chosen": "archive_shipment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "create_ticket",
+      "chosen": "create_ticket",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "search_payment",
+      "chosen": "search_payment",
+      "selected": true,
+      "args_ok": true
+    },
+    {
+      "condition": "realistic+aliases",
+      "desc_hash": "825265218fb5",
+      "kind": "paraphrase",
+      "expected": "assign_customer",
+      "chosen": "assign_customer",
+      "selected": true,
+      "args_ok": true
+    }
+  ]
+}

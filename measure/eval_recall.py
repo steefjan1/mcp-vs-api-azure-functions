@@ -111,29 +111,44 @@ def with_aliases(tools):
         out.append(t)
     return out
 
+K_SWEEP = (3, 5, 10)
+
 def run():
     tasks = make_tasks()
-    results = {"shortlist_k": K, "tool_pool": N_TOOLS, "tasks": len(tasks), "recall": {}}
+    results = {"shortlist_k": K, "k_sweep": list(K_SWEEP), "tool_pool": N_TOOLS,
+               "tasks": len(tasks), "recall": {}, "recall_by_k": {}}
     conditions = {v: synth_tools(N_TOOLS, v) for v in ("terse", "realistic", "verbose")}
     conditions["realistic+aliases"] = with_aliases(synth_tools(N_TOOLS, "realistic"))
     for verbosity, tools in conditions.items():
         index = {t["name"]: i for i, t in enumerate(tools)}
         bm25 = BM25([tool_document(t) for t in tools])
-        hits = {"vocabulary": 0, "paraphrase": 0}
+        hits = {k: {"vocabulary": 0, "paraphrase": 0} for k in K_SWEEP}
         totals = {"vocabulary": 0, "paraphrase": 0}
         for task in tasks:
             totals[task["kind"]] += 1
-            shortlist = bm25.top(tokenize(task["utterance"]), K)
-            if index[task["tool"]] in shortlist:
-                hits[task["kind"]] += 1
-        results["recall"][verbosity] = {
-            kind: round(100 * hits[kind] / totals[kind], 1) for kind in hits}
+            shortlist = bm25.top(tokenize(task["utterance"]), max(K_SWEEP))
+            for k in K_SWEEP:
+                if index[task["tool"]] in shortlist[:k]:
+                    hits[k][task["kind"]] += 1
+        results["recall_by_k"][verbosity] = {
+            k: {kind: round(100 * hits[k][kind] / totals[kind], 1) for kind in totals}
+            for k in K_SWEEP}
+        results["recall"][verbosity] = results["recall_by_k"][verbosity][K]
+    # token price of a shortlist of k realistic tools, from the same counter
+    from token_cost import tokens_of
+    results["shortlist_token_price_realistic"] = {
+        k: tokens_of(conditions["realistic"][:k]) for k in K_SWEEP}
     (HERE / "eval_recall_results.json").write_text(json.dumps(results, indent=2))
-    print(f"recall@{K} of the correct tool into the shortlist, "
+    print(f"recall of the correct tool into the shortlist, "
           f"{N_TOOLS} tools, {len(tasks)} tasks\n")
-    print(f"{'descriptions':>12} {'vocabulary':>11} {'paraphrase':>11}")
-    for verbosity, r in results["recall"].items():
-        print(f"{verbosity:>12} {r['vocabulary']:>10}% {r['paraphrase']:>10}%")
+    for k in K_SWEEP:
+        price = results["shortlist_token_price_realistic"][k]
+        print(f"recall@{k}  (a {k}-tool realistic shortlist costs ~{price} tokens/call)")
+        print(f"{'descriptions':>18} {'vocabulary':>11} {'paraphrase':>11}")
+        for verbosity in conditions:
+            r = results["recall_by_k"][verbosity][k]
+            print(f"{verbosity:>18} {r['vocabulary']:>10}% {r['paraphrase']:>10}%")
+        print()
 
 if __name__ == "__main__":
     run()
