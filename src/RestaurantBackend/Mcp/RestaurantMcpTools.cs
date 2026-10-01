@@ -91,7 +91,7 @@ public class RestaurantMcpTools(IRestaurantDirectory directory, ILogger<Restaura
 
     [Function(nameof(GetMenuTool))]
     public string GetMenuTool(
-        [McpToolTrigger("get_menu", "Gets the menu for one restaurant, including item names, descriptions, and prices in euros.")]
+        [McpToolTrigger("get_menu", "Gets the menu for one restaurant, including item names, descriptions, and prices in euros. Call it after search_restaurants and before placing an order.")]
             ToolInvocationContext context,
         [McpToolProperty("restaurantId", "The restaurant id, as returned by search_restaurants (for example 'r1').", isRequired: true)]
             string restaurantId)
@@ -105,7 +105,7 @@ public class RestaurantMcpTools(IRestaurantDirectory directory, ILogger<Restaura
 
     [Function(nameof(PlaceOrderTool))]
     public string PlaceOrderTool(
-        [McpToolTrigger("place_order", "Places an order for one menu item at a restaurant and returns a confirmation with the total price.")]
+        [McpToolTrigger("place_order", "Places an order for one menu item at a restaurant and returns a confirmation with the total price. Use it only after get_menu has confirmed the exact item name.")]
             ToolInvocationContext context,
         [McpToolProperty("restaurantId", "The restaurant id, as returned by search_restaurants.", isRequired: true)]
             string restaurantId,

@@ -204,7 +204,7 @@ resource toolSearchRestaurants 'Microsoft.ApiManagement/service/apis/tools@2025-
   name: 'search_restaurants'
   properties: {
     displayName: 'search_restaurants'
-    description: 'Searches the restaurant directory. Both cuisine and city filters are optional; call without arguments to list every restaurant.'
+    description: 'Searches the restaurant directory. Both filters are optional; call it without arguments to list every restaurant.'
     operationId: getRestaurants.id
   }
 }
@@ -214,7 +214,7 @@ resource toolGetMenu 'Microsoft.ApiManagement/service/apis/tools@2025-09-01-prev
   name: 'get_menu'
   properties: {
     displayName: 'get_menu'
-    description: 'Gets the menu for one restaurant, including item names, descriptions, and prices in euros. The restaurant id comes from search_restaurants.'
+    description: 'Gets the menu for one restaurant, including item names, descriptions, and prices in euros. Call it after search_restaurants and before placing an order.'
     operationId: getRestaurantMenu.id
   }
 }
@@ -224,7 +224,7 @@ resource toolPlaceOrder 'Microsoft.ApiManagement/service/apis/tools@2025-09-01-p
   name: 'place_order'
   properties: {
     displayName: 'place_order'
-    description: 'Places an order for one menu item at a restaurant and returns a confirmation with the total price. Item names come from get_menu.'
+    description: 'Places an order for one menu item at a restaurant and returns a confirmation with the total price. Use it only after get_menu has confirmed the exact item name.'
     operationId: placeOrder.id
   }
 }
