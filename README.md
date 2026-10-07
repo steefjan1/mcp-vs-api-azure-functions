@@ -35,9 +35,6 @@ Neither door contains business logic. Both call the same `IRestaurantDirectory` 
 | `src/RestaurantBackend/test.http` | REST requests you can run from VS Code |
 | `.vscode/mcp.json` | MCP server registration for VS Code / GitHub Copilot |
 | `infra/` | Bicep for a Flex Consumption function app (azd) |
-| `infra/apim/` | API Management in front of both doors, three patterns |
-| `measure/` | Token cost and shortlist recall measurement harnesses |
-| `images/` | Diagrams, charts, and screenshots used by the posts |
 
 ## Prerequisites
 
@@ -102,21 +99,13 @@ This provisions a Flex Consumption function app (azd prompts for the region; `sw
 - `REST_API_BASE_URL`: the REST API base
 - `MCP_SERVER_URL`: the MCP endpoint
 
-Out of the box, the MCP webhook is protected by a system key. Retrieve it with:
+In Azure, the MCP webhook is protected by a system key. Retrieve it with:
 
 ```
 az functionapp keys list --resource-group <rg> --name <app-name> --query systemKeys.mcp_extension -o tsv
 ```
 
-and send it as the `x-functions-key` header from clients that support custom headers (Claude Code, MCP Inspector).
-
-### Built-in MCP authentication with Entra ID
-
-For end-user MCP clients that implement the MCP authorization specification, keys are a dead end; the flow is OAuth or nothing. The function app supports built-in MCP authentication with Entra ID: in the portal, the AI (preview) tab has a "Turn on MCP authentication" button that creates the app registration, wires up App Service authentication, and turns off key-based access in one stroke.
-
-One alignment the button does not do for you: Entra enforces that the RFC 8707 resource parameter matches the scope's audience, and the defaults disagree, so token requests fail with AADSTS9010010 invalid_target. Fix it by making three values character-for-character identical to the MCP endpoint URL (`https://<app>.azurewebsites.net/runtime/webhooks/mcp`): the app registration's Application ID URI, the scope in the `WEBSITE_AUTH_PRM_DEFAULT_WITH_SCOPES` app setting, and an allowed token audience in App Service authentication. The 401 post below walks through the whole thing.
-
-With that in place, the `restaurant-directory-azure` entry in `.vscode/mcp.json` carries no credentials at all: VS Code hits the 401, discovers the Protected Resource Metadata, signs you in through Entra, and lists the tools.
+and send it as the `x-functions-key` header (the `restaurant-directory-azure` entry in `.vscode/mcp.json` prompts for it).
 
 ## Caveats, deliberately visible
 
@@ -133,12 +122,16 @@ The `infra/apim/` module adds Azure API Management in three patterns: in front o
 
 ## Blog series
 
-This repo accompanies a series on Cloud Perspectives / dev.to:
+This repo is the companion to a series. Every claim in the posts is reproducible from the code and the `measure/` harnesses here.
 
-1. [MCP vs API Is the Wrong Question](https://dev.to/steefjan_wiggers_34a415b/mcp-vs-api-is-the-wrong-question-392f), the sample, the demo, and the lessons learned deploying it
-2. [What the Agent Pays for Discovery](https://dev.to/steefjan_wiggers_34a415b/what-the-agent-pays-for-discovery-221a), measuring the standing token cost of tool definitions (`measure/token_cost.py`)
-3. Tool Descriptions Are the Contract, why the prose is the interface and how to lint it
-4. What a 401 Means to an MCP Client, the key vs OAuth client boundary and built-in Entra authentication, verified end to end
-5. The Shortlist Decides First, measuring recall of the correct tool into a retrieval shortlist (`measure/eval_recall.py`)
-
-Drafts for unpublished entries live in the repo root; the APIM patterns post is in `blog-two-doors-apim.md`.
+1. [MCP vs API Is the Wrong Question](https://dev.to/steefjan_wiggers_34a415b/mcp-vs-api-is-the-wrong-question-392f) introduces the sample: one backend, two doors.
+2. [Same Kitchen, Two Doors, One Maître d'](https://dev.to/steefjan_wiggers_34a415b/same-kitchen-two-doors-one-maitre-d-510) puts API Management in front of both doors.
+3. [What the Agent Pays for Discovery](https://dev.to/steefjan_wiggers_34a415b/what-the-agent-pays-for-discovery-221a) measures the token cost of tool discovery (`measure/token_cost.py`).
+4. [Tool Descriptions Are the Contract](https://dev.to/steefjan_wiggers_34a415b/tool-descriptions-are-the-contract-5488) argues the descriptions are the real interface, and documents the drift.
+5. [What a 401 Means to an MCP Client](https://dev.to/steefjan_wiggers_34a415b/what-a-401-means-to-an-mcp-client-1a5i) turns on built-in MCP auth and walks the OAuth discovery chain.
+6. [The Shortlist Decides First](https://dev.to/steefjan_wiggers_34a415b/the-shortlist-decides-first-1d5a) measures retrieval recall at 100 tools (`measure/eval_recall.py`).
+7. [The Model Was Never the Problem](https://dev.to/steefjan_wiggers_34a415b/the-model-was-never-the-problem-147e) measures selection within a shortlist (`measure/eval_selection.py`).
+8. [Watching the Contract Fail in Production](https://dev.to/steefjan_wiggers_34a415b/watching-the-contract-fail-in-production-2dnd) adds confusion telemetry with a description hash (`measure/drive_confusion.py`).
+9. [Linting Prose in CI](https://dev.to/steefjan_wiggers_34a415b/linting-prose-in-ci-2ke0) gates description changes in GitHub Actions (`measure/lint_contract.py`).
+10. [Authorization Stays in the Kitchen](https://dev.to/steefjan_wiggers_34a415b/authorization-stays-in-the-kitchen-p59) implements claims-based authorization, decided once and rendered per door.
+11. [The Third Leg of the Parity Test](https://dev.to/steefjan_wiggers_34a415b/the-third-leg-of-the-parity-test-j1b) makes retries safe: `Idempotency-Key` on REST, `clientOrderId` on MCP (`measure/drive_idempotency.py`).
