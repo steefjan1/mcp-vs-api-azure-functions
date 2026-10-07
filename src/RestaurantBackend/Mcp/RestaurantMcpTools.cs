@@ -5,6 +5,7 @@ using System.Text.Json;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Extensions.Mcp;
 using Microsoft.Extensions.Logging;
+using RestaurantBackend.Models;
 using RestaurantBackend.Services;
 
 namespace RestaurantBackend.Mcp;
@@ -112,12 +113,39 @@ public class RestaurantMcpTools(IRestaurantDirectory directory, ILogger<Restaura
         [McpToolProperty("itemName", "The exact menu item name, as returned by get_menu.", isRequired: true)]
             string itemName,
         [McpToolProperty("quantity", "How many to order, between 1 and 20.", isRequired: true)]
-            int quantity)
+            int quantity,
+        [McpToolProperty("clientOrderId", "An order reference that comes from you, the caller: invent a unique value, and reuse the same value if you retry this order after an error or timeout.", isRequired: false)]
+            string? clientOrderId)
     {
-        var confirmation = directory.PlaceOrder(new(restaurantId, itemName, quantity));
-        return confirmation is null
-            ? Confusion("order_rejected", "place_order",
-                "The order could not be placed. Check the restaurant id with search_restaurants, the item name with get_menu, and keep quantity between 1 and 20.")
-            : JsonSerializer.Serialize(confirmation, JsonOptions);
+        // The same kitchen decision, rendered as prose, because this door's
+        // caller is an agent and agents recover from instructions.
+        if (!OrderPolicy.MayPlaceOrders(CallerContext.ForMcpDoor()))
+        {
+            return Confusion("order_forbidden", "place_order",
+                $"This caller is not allowed to place orders; that requires the {OrderPolicy.RequiredRole} role. "
+                + "Searching restaurants and reading menus remain available.");
+        }
+
+        var result = directory.PlaceOrder(new(restaurantId, itemName, quantity), clientOrderId);
+        switch (result.Outcome)
+        {
+            case OrderOutcome.Replayed:
+                // Same key, same request: hand back the original confirmation,
+                // byte for byte. The retry succeeded and nothing was duplicated;
+                // the log line makes the retry rate visible in telemetry.
+                logger.LogInformation(
+                    "Order replayed: {ClientOrderId} on place_order (descHash {DescHash}, schemaVersion {SchemaVersion})",
+                    clientOrderId, ToolContract.DescriptionHash, ToolContract.SchemaVersion);
+                return JsonSerializer.Serialize(result.Confirmation, JsonOptions);
+            case OrderOutcome.Conflict:
+                return Confusion("order_conflict", "place_order",
+                    $"The clientOrderId '{clientOrderId}' was already used for a different order. "
+                    + "To place a new order, invent a new clientOrderId. To retry a failed order, repeat it with the original arguments.");
+            case OrderOutcome.Invalid:
+                return Confusion("order_rejected", "place_order",
+                    "The order could not be placed. Check the restaurant id with search_restaurants, the item name with get_menu, and keep quantity between 1 and 20.");
+            default:
+                return JsonSerializer.Serialize(result.Confirmation, JsonOptions);
+        }
     }
 }

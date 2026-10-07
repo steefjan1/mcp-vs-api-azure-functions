@@ -20,3 +20,14 @@ public record OrderConfirmation(
     int Quantity,
     decimal Total,
     string Status);
+
+/// <summary>
+/// What the kitchen decided about an order attempt. Replayed means the same
+/// idempotency key arrived again with the same request, so the original
+/// confirmation is returned and no second order exists. Conflict means the
+/// key was reused with a different request, which is always a caller bug.
+/// </summary>
+public enum OrderOutcome { Placed, Replayed, Conflict, Invalid }
+
+/// <summary>The kitchen's answer: an outcome, plus the confirmation when one exists.</summary>
+public record OrderResult(OrderOutcome Outcome, OrderConfirmation? Confirmation);

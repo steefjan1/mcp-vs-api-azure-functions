@@ -11,7 +11,7 @@ public interface IRestaurantDirectory
 {
     IReadOnlyList<Restaurant> Search(string? cuisine, string? city);
     Menu? GetMenu(string restaurantId);
-    OrderConfirmation? PlaceOrder(OrderRequest request);
+    OrderResult PlaceOrder(OrderRequest request, string? idempotencyKey = null);
 }
 
 public class InMemoryRestaurantDirectory : IRestaurantDirectory
@@ -39,6 +39,16 @@ public class InMemoryRestaurantDirectory : IRestaurantDirectory
 
     private readonly ConcurrentDictionary<string, OrderConfirmation> _orders = new();
 
+    // Idempotency store: key -> (request fingerprint, original confirmation).
+    // Lives in the kitchen because deduplication is a business decision, not a
+    // transport concern; both doors share it. In-memory, like every store in
+    // this sample: the scope is one instance and one process lifetime, and a
+    // production version would use a durable store with a TTL.
+    private readonly ConcurrentDictionary<string, (string Fingerprint, OrderConfirmation Confirmation)> _byIdempotencyKey = new();
+
+    private static string Fingerprint(OrderRequest request) =>
+        $"{request.RestaurantId?.Trim().ToLowerInvariant()}|{request.ItemName?.Trim().ToLowerInvariant()}|{request.Quantity}";
+
     public IReadOnlyList<Restaurant> Search(string? cuisine, string? city) =>
         Restaurants
             .Where(r => string.IsNullOrWhiteSpace(cuisine) || r.Cuisine.Equals(cuisine.Trim(), StringComparison.OrdinalIgnoreCase))
@@ -56,18 +66,29 @@ public class InMemoryRestaurantDirectory : IRestaurantDirectory
         return new Menu(restaurant.Id, restaurant.Name, items);
     }
 
-    public OrderConfirmation? PlaceOrder(OrderRequest request)
+    public OrderResult PlaceOrder(OrderRequest request, string? idempotencyKey = null)
     {
+        // A replayed key returns the original confirmation; the same key with
+        // a different request is a conflict. Decided before validation, so a
+        // retry of a once-valid order replays even if the caller mangled it.
+        if (idempotencyKey is not null
+            && _byIdempotencyKey.TryGetValue(idempotencyKey, out var seen))
+        {
+            return seen.Fingerprint == Fingerprint(request)
+                ? new OrderResult(OrderOutcome.Replayed, seen.Confirmation)
+                : new OrderResult(OrderOutcome.Conflict, null);
+        }
+
         if (request.Quantity is < 1 or > 20)
         {
-            return null;
+            return new OrderResult(OrderOutcome.Invalid, null);
         }
 
         var menu = GetMenu(request.RestaurantId);
         var item = menu?.Items.FirstOrDefault(i => i.Name.Equals(request.ItemName?.Trim(), StringComparison.OrdinalIgnoreCase));
         if (menu is null || item is null)
         {
-            return null;
+            return new OrderResult(OrderOutcome.Invalid, null);
         }
 
         var confirmation = new OrderConfirmation(
@@ -78,7 +99,18 @@ public class InMemoryRestaurantDirectory : IRestaurantDirectory
             Total: item.Price * request.Quantity,
             Status: "confirmed");
 
+        if (idempotencyKey is not null
+            && !_byIdempotencyKey.TryAdd(idempotencyKey, (Fingerprint(request), confirmation)))
+        {
+            // Two requests raced on the same key; the first one won. Return
+            // its confirmation and discard ours, so exactly one order exists.
+            var winner = _byIdempotencyKey[idempotencyKey];
+            return winner.Fingerprint == Fingerprint(request)
+                ? new OrderResult(OrderOutcome.Replayed, winner.Confirmation)
+                : new OrderResult(OrderOutcome.Conflict, null);
+        }
+
         _orders[confirmation.OrderId] = confirmation;
-        return confirmation;
+        return new OrderResult(OrderOutcome.Placed, confirmation);
     }
 }

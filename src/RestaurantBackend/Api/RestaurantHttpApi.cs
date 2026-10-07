@@ -55,9 +55,36 @@ public class RestaurantHttpApi(IRestaurantDirectory directory)
             return new BadRequestObjectResult(new { error = "restaurantId and itemName are required." });
         }
 
-        var confirmation = directory.PlaceOrder(order);
-        return confirmation is null
-            ? new BadRequestObjectResult(new { error = "Unknown restaurant or menu item, or invalid quantity (1-20)." })
-            : new OkObjectResult(confirmation);
+        // The kitchen decides; this door renders the decision as a machine-
+        // shaped 403, because its caller is code and code branches on status.
+        var caller = CallerContext.FromClientPrincipal(req.Headers["x-ms-client-principal"]);
+        if (!OrderPolicy.MayPlaceOrders(caller))
+        {
+            return new ObjectResult(new
+            {
+                error = "forbidden",
+                detail = $"Placing orders requires the {OrderPolicy.RequiredRole} role.",
+                requiredRole = OrderPolicy.RequiredRole
+            })
+            { StatusCode = StatusCodes.Status403Forbidden };
+        }
+
+        // Idempotency: the client supplies a key in the standard header; the
+        // kitchen deduplicates. This door only translates the kitchen's
+        // outcome into status codes: a replay is a 200 with the original
+        // body, a key reused for a different request is a 422.
+        string? idempotencyKey = req.Headers["Idempotency-Key"];
+        var result = directory.PlaceOrder(order, idempotencyKey);
+        return result.Outcome switch
+        {
+            OrderOutcome.Conflict => new ObjectResult(new
+            {
+                error = "idempotency_conflict",
+                detail = "This Idempotency-Key was already used for a different request. Send a new key for a new order."
+            })
+            { StatusCode = StatusCodes.Status422UnprocessableEntity },
+            OrderOutcome.Invalid => new BadRequestObjectResult(new { error = "Unknown restaurant or menu item, or invalid quantity (1-20)." }),
+            _ => new OkObjectResult(result.Confirmation)
+        };
     }
 }
